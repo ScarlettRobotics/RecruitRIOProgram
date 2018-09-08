@@ -13,7 +13,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import main.java.frc.team4733.robot.commands.CmdDriveFwd;
+import main.java.frc.team4733.robot.commands.CmdFwdAuto;
 import main.java.frc.team4733.robot.commands.CmdNothing;
 import main.java.frc.team4733.robot.subsystems.SBSDriveTrainSample;
 
@@ -47,7 +47,7 @@ public class Robot extends TimedRobot {
 		//Setup Auto
 		DriverStation.reportError("Setting up Auto", false);
 		m_chooser.addDefault("Default Auto", new CmdNothing());
-		m_chooser.addObject("Forward Auto", new CmdDriveFwd(0.5, 0.8));
+		m_chooser.addObject("Forward Auto", new CmdFwdAuto());
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", m_chooser);
 		
