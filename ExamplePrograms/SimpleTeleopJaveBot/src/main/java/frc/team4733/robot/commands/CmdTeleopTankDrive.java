@@ -25,11 +25,18 @@ public class CmdTeleopTankDrive extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	
-    	double leftAxis = Robot.m_oi.normalize(Robot.m_oi.xboxController.getRawAxis(1), 0.07);
-    	double rightAxis = Robot.m_oi.normalize(Robot.m_oi.xboxController.getRawAxis(5), 0.07);
+    	//double leftAxis = Robot.m_oi.normalize(Robot.m_oi.xboxController.getRawAxis(1), 0.07);
+    	//double rightAxis = Robot.m_oi.normalize(Robot.m_oi.xboxController.getRawAxis(5), 0.07);
     	
-    	Robot.m_sampleDriveTrain.tankDrive(leftAxis, rightAxis);
+    	//Robot.m_sampleDriveTrain.tankDrive(leftAxis, rightAxis);
+    	
+    	double yValue = Robot.m_oi.normalize(Robot.m_oi.atk3.getRawAxis(1), 0.07);
+    	double xValue = Robot.m_oi.normalize(Robot.m_oi.atk3.getRawAxis(0), 0.07) * -1;
+    	
+    	Robot.m_sampleDriveTrain.arcadeDrive(yValue, xValue);
+    	
     }
+    
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {

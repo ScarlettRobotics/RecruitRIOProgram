@@ -43,6 +43,7 @@ public class OI {
 	// button.whenReleased(new ExampleCommand());
 	
 	public Joystick xboxController = new Joystick(0);
+	public Joystick atk3 = new Joystick(1);
 	
 	public double normalize(double input, double deadzone) //Normalize inputs to prevent deadzone errors
 	{

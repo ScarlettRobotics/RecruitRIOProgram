@@ -35,6 +35,11 @@ public class SBSDriveTrainSample extends Subsystem {
 		DTtransmission.tankDrive(left * masterSensitivity, right * masterSensitivity);
 	}
 	
+	public void arcadeDrive(double throttle, double side)
+	{
+		DTtransmission.arcadeDrive(throttle, side);
+	}
+	
 	public double getHeading()
 	{
 		return gyro.getAngle();
