@@ -18,3 +18,11 @@ Note: Configure your JAVA_HOME variable to point to your JDK, Link: https://docs
 5. GradleRIO (Link: https://github.com/Open-RIO/GradleRIO | Ensure you run gradlew.bat)<br />
 6. Github Desktop (Link: https://desktop.github.com/)
 7. [Optional but recommended] - git.scm (Link: https://git-scm.com/)
+
+
+
+
+p.s Sahil has the big gay.
+
+love
+old code head
