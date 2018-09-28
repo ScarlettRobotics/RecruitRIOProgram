@@ -12,8 +12,6 @@ Java Development:
 As of right now we are transitioning to Java code for the 2019 season. As a result - the following items are required for developing:<br />
 1. The Newest JDK (Search this up on google as the version & link updates constantly)<br />
 Note: Configure your JAVA_HOME variable to point to your JDK, Link: https://docs.oracle.com/cd/E19182-01/821-0917/inst_jdk_javahome_t/<br/>
-Note from Ben - Description of how to add JAVA_HOME variable is slightly inaccurate on Windows 10 (1803)
-Here's what I used: https://javatutorial.net/set-java-home-windows-10
 2. Eclipse Java (Link: https://wpilib.screenstepslive.com/s/currentCS/m/java/l/599681-installing-eclipse-c-java)<br />
 3. [Optional but recommended] IntelliJ IDEA for FRC (Link: https://gitlab.com/Javaru/frc-intellij-idea-plugin/wikis/home)<br />
 4. Gradle (Link: https://gradle.org/install/)<br />
