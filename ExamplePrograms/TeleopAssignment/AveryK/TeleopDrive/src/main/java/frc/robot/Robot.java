@@ -2,6 +2,8 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.Compressor;
+import frc.robot.commands.AutoCraneCommand;
 import frc.robot.subsystems.*;
 
 /**
@@ -16,6 +18,8 @@ public class Robot extends TimedRobot {
   public static Crane crane;
   public static OI oi;
 
+  Command autoCraneCommand;
+
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
@@ -25,6 +29,8 @@ public class Robot extends TimedRobot {
     driveTrain = new DriveTrain();
     crane = new Crane();
     oi = new OI();
+
+    autoCraneCommand = new AutoCraneCommand();
   }
 
   /**
@@ -74,6 +80,9 @@ public class Robot extends TimedRobot {
      * autonomousCommand = new ExampleCommand(); break; }
      */
 
+    if (autoCraneCommand != null) {
+      autoCraneCommand.start();
+    }
     // schedule the autonomous command (example)
   }
 

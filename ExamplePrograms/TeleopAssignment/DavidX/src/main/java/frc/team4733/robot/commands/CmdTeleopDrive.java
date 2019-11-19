@@ -78,7 +78,7 @@ public class CmdTeleopDrive extends Command {
 			}
 		}	
 		
-		Robot.m_driveTrain.TankDrive(leftAxis * Sensitivity, rightAxis * Sensitivity);
+		Robot.m_driveTrain.TankDrive(-leftAxis * Sensitivity, -rightAxis * Sensitivity);
 	}
 
 	// Make this return true when this Command no longer needs to run execute()

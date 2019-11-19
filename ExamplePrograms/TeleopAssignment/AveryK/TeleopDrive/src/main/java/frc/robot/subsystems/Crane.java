@@ -34,7 +34,8 @@ public class Crane extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         // setDefaultCommand(new MySpecialCommand());
-        setDefaultCommand(new CraneCommand());
+        //Remove comment for manual crane control
+        //setDefaultCommand(new CraneCommand());
     }
 
     public void Lift(double speed) {
