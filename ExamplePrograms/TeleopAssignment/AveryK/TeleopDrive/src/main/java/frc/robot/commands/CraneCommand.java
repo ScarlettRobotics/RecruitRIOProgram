@@ -12,6 +12,8 @@ public class CraneCommand extends Command {
 
     double LoopGainConstEncoder = 1.2;
 
+    boolean isAuto = false;
+
     public CraneCommand() {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.crane);
@@ -26,6 +28,10 @@ public class CraneCommand extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
+        if(Robot.oi.controller.getRawButton(1)) {
+            isAuto = !isAuto;
+        }
+        
         double encoderValue = Robot.crane.turnAngle();
 
         //Crane Lift
@@ -51,17 +57,25 @@ public class CraneCommand extends Command {
     protected void interrupted() {}
 
     private void runCraneTurn(double encoderValue) {
-        
-        boolean turningUp = Robot.oi.controller.getRawButton(6); //Bumper
-        boolean turningDown = Robot.oi.controller.getRawButton(5); //Bumper
         double turn;
+        if(!isAuto) {
+            boolean turningUp = Robot.oi.controller.getRawButton(6); //Bumper
+            boolean turningDown = Robot.oi.controller.getRawButton(5); //Bumper
 
-        if(turningUp && !turningDown) { //If we should be going up
-            turn = 0.5;
-        } else if (turningDown && !turningUp) { //If we should be going down
-            turn = -0.5;
+            if(turningUp && !turningDown) { //If we should be going up
+                turn = 0.5;
+            } else if (turningDown && !turningUp) { //If we should be going down
+                turn = -0.5;
+            } else {
+                turn = 0;
+            }
         } else {
-            turn = 0;
+            double ty = NetworkTableInstance.getDefault().getTable("limelight").getEntry("ty").getDouble(0);
+            double tv = NetworkTableInstance.getDefault().getTable("limelight").getEntry("tv").getDouble(0);
+
+            if(tv == 1.0) {
+                turn = ty;
+            }
         }
 
         if(turn > 0.1 || turn < -0.1) { //If turning currently

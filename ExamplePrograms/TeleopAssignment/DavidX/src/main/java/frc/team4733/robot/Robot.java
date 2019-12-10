@@ -9,7 +9,8 @@ package main.java.frc.team4733.robot;
 
 import main.java.frc.team4733.robot.commands.ExampleCommand;
 import main.java.frc.team4733.robot.subsystems.*;
-
+import edu.wpi.cscore.UsbCamera;
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -28,6 +29,8 @@ public class Robot extends TimedRobot {
 	public static SBSDriveTrain m_driveTrain;
 	public static OI m_oi;
 
+	
+	UsbCamera camera;
 	Command m_autonomousCommand;
 	SendableChooser<Command> m_chooser = new SendableChooser<>();
 
@@ -40,6 +43,13 @@ public class Robot extends TimedRobot {
 		m_driveTrain = new SBSDriveTrain();
 		m_oi = new OI();
 		DriverStation.reportError("Subsystems Created", true);
+		
+		int IMG_WIDTH = 720;
+		int IMG_HEIGHT = 1280;
+		
+		camera = CameraServer.getInstance().startAutomaticCapture(); //Create the camera
+		camera.setResolution(IMG_WIDTH, IMG_HEIGHT); //Set Resolution & FPS (Note to Future Code Team: TURN THESE VALUES DOWN to 640 x 480 and 10fps)
+		camera.setFPS(23);
 		
 		m_chooser.addDefault("Default Auto", new ExampleCommand());
 		// chooser.addObject("My Auto", new MyAutoCommand());
