@@ -1,6 +1,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.Compressor;
 import frc.robot.commands.AutoCraneCommand;
@@ -18,9 +19,9 @@ public class Robot extends TimedRobot {
 	public static Crane crane;
 	public static OI oi;
 
-	public static Command autoCraneCommand;
+	public static AutoCraneCommand autoCraneCommand;
 
-	public static boolean isAutoCommand;
+	public static boolean isAuto;
 
 	/**
 	 * This function is run when the robot is first started up and should be

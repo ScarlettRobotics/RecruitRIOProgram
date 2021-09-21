@@ -12,7 +12,7 @@ public class AutoCraneCommand extends Command {
 
     double LoopGainConstEncoder = 1.2;
 
-    public CraneCommand() {
+    public AutoCraneCommand() {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.crane);
     }
