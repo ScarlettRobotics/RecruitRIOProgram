@@ -25,7 +25,7 @@ public class DriveSubsystem extends SubsystemBase {
 	public final SpeedControllerGroup m_LMotors = new SpeedControllerGroup(m_motorFL, m_motorRL);
 	public final SpeedControllerGroup m_RMotors = new SpeedControllerGroup(m_motorFR, m_motorRR);
 
-	//Here we creat our drive train
+	//Here we create our drive train
 	private final DifferentialDrive m_transmission = new DifferentialDrive(m_LMotors, m_RMotors);
 
 	/**

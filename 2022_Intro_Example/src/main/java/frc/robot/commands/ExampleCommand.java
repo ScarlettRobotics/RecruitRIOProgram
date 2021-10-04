@@ -40,7 +40,7 @@ public class ExampleCommand extends CommandBase {
 		double controllerInput = Joysticks.xboxController.getRawAxis(0);
 		DriverStation.reportWarning("This is a test: " + controllerInput, false);
 		// Tell the drive train to turn based on the speed and the controller input
-		driveSubsystem.drive(-speed * controllerInput, speed * controllerInput);
+		driveSubsystem.drive(speed * controllerInput, -speed * controllerInput);
 		//!-------------------------------!//
 	}
 
