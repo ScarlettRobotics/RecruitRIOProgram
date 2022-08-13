@@ -35,13 +35,11 @@ public class ExampleCommand extends CommandBase {
 	// Called every time the scheduler runs while the command is scheduled.
 	@Override
 	public void execute() {
-		//!-There is a bug somewhere here-!//
 		// Get the input from the controller (x-axis). Goes from -1 to 1
 		double controllerInput = Joysticks.xboxController.getRawAxis(0);
 		DriverStation.reportWarning("This is a test: " + controllerInput, false);
 		// Tell the drive train to turn based on the speed and the controller input
 		driveSubsystem.drive(speed * controllerInput, -speed * controllerInput);
-		//!-------------------------------!//
 	}
 
 	// Called once the command ends or is interrupted.
